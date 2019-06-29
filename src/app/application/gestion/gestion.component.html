@@ -1,0 +1,31 @@
+Ajout produit
+<div>
+  <label> Title 
+    <input class="form-control" [(ngModel)] ="produit.title"> 
+  </label>
+</div>
+
+<div>
+  <label> Description
+    <input class="form-control" [(ngModel)] ="produit.description"> 
+  </label>
+</div>
+
+<div>
+  <label> Price
+    <input class="form-control" [(ngModel)] ="produit.price"> 
+  </label>
+</div>
+
+<div>
+  
+  <label> Type
+      <select class="form-control" [(ngModel)] ="produit.product_type">
+          <option value="alimentaire">alimentaire</option>
+          <option value="cosmotique">cosmotique</option>
+          <option value="vestimentaire">vestimentaire</option>
+        </select>  </label>
+</div>
+
+<button class="btn btn-success" *ngIf="idProduit==undefined" (click) = "Save()">Save</button>
+<button class="btn btn-success" *ngIf="idProduit!=undefined" (click) = "Update()">Update</button>

@@ -1,0 +1,99 @@
+<div class = "form-group">
+  <label> Name :</label>
+  <input class="form-control" value="{{imageURL}}">
+</div>
+<img src="{{imageURL}}"><br>
+<button class="btn btn-success" [disabled] = "state" >Valider</button>
+<button class="btn btn-success" (click) = "ClickEvent()">Click</button>
+<br>
+<br>
+<br>
+<p>
+<button class="btn btn-success" (click) = "ClickPlus()">+</button>
+<input class="form-control" value="{{Count}}">
+<button class="btn btn-danger" (click) = "ClickMoins()">-</button>
+</p>
+<hr>
+<div class = "form-group">
+    <label> ngModel :</label>
+    <input class="form-control" [(ngModel)] ="message">
+  </div>
+  <button class="btn btn-success" (click) = "AfficheMessage()">ngModel</button>
+<hr>
+<div class = "form-group">
+  <label> Nom et Prénom </label> 
+  <input class="form-control" [(ngModel)] ="Name">
+</div>
+<div class = "form-group">
+  <label> Email </label> 
+  <input class="form-control" [(ngModel)] ="Email">
+</div>
+<div class = "form-group" *ngIf="Name == 'nizar'">
+  <label> Phone </label> 
+  <input class="form-control" [(ngModel)] ="Phone">
+</div>
+<div class = "form-group">
+  <label> About </label> 
+  <input class="form-control" [(ngModel)] ="About">
+</div>
+<button class="btn btn-success" (click) = "AfficherForm()">Valider</button>
+<button class="btn btn-success" (click) = "Annuler()">Annuler</button>
+
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Named <input class="form-control" [(ngModel)]="item"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let h of HEROES|search:item"  [ngClass]="{red:h.id == 1, black:h.id == 4, yellow:h.id == 2}">
+      <td>{{h.id}}</td>
+      <td>{{h.name|uppercase}}</td>
+    </tr>
+  </tbody>
+</table>
+{{date|date:'M/dd/yy'}}
+{{date|date:'MMMM d, y, h:mm:ss a z'}}
+
+<hr>
+Exercice
+<div>
+  <label> Nom & Prénom 
+    <input class="form-control" [(ngModel)] ="NameX"> 
+  </label>
+</div>
+
+<div>
+  <label> Email
+    <input class="form-control" [(ngModel)] ="EmailX"> 
+  </label>
+</div>
+
+<div>
+  <label> Phone
+    <input class="form-control" [(ngModel)] ="PhoneX"> 
+  </label>
+</div>
+<button class="btn btn-success" (click) = "AjouterLigne()">Valider</button>
+
+
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom et prénom</th>
+      <th>Email </th>
+      <th>Phone </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let h of personne"  >
+      <td>{{h.NameY}}</td>
+      <td>{{h.EmailY}}</td>
+      <td>{{h.PhoneY}}</td>
+
+    </tr>
+  </tbody>
+</table>

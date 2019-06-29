@@ -1,0 +1,25 @@
+<h2>{{'hello'|translate}}</h2>
+<h1>Products List</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>description </th>
+        <th>price </th>
+        <th>product_type </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let h of produit"  >
+        <td>{{h.title}}</td>
+        <td>{{h.description}}</td>
+        <td>{{h.price}}</td>
+        <td>{{h.product_type}}</td> 
+        <td>
+          <button class="btn btn-success" (click) = "MajForm(h._id)">Edit</button>
+          <button class="btn btn-success" (click) = "SuppForm(h._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
